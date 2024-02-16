@@ -11,9 +11,7 @@ public class InfoService01 {
     String email;
 
     public String getData() {
-
-        String s = formData(getInputs());
-        return s;
+        return formData(getInputs());
     }
 
     private Client<String, String> getInputs() {
@@ -22,7 +20,7 @@ public class InfoService01 {
         name = scanner.nextLine();
         System.out.print("Enter client's email: ");
         email = scanner.nextLine();
-        return new Client (name, email);
+        return new Client<String, String> (name, email);
     }
 
     private String formData(Client<String, String> client) {
